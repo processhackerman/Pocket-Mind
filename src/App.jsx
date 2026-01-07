@@ -1,10 +1,10 @@
+import HomePage from "./pages/Home/HomePage"
+
 function App() {
 
   return (
     <>
-      <h1 className="main">
-        Hello world
-      </h1>
+      <HomePage />
     </>
   )
 }

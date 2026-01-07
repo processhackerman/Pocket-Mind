@@ -1,0 +1,122 @@
+@import "../../../styles/_variables.scss";
+
+.weather-widget {
+    grid-area: 1 / 1 / 3 / 2;
+    background: url("../../../assets/images/weather-cold.jpg") center center
+        no-repeat;
+    background-size: cover;
+    padding: $space-xl $space-l $space-l;
+    border: $dark-2 2px solid;
+    box-shadow: inset rgba(#000, 50%) 0 0 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr auto;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    &__location-group {
+        grid-area: 1 / 1 / 2 / 1;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        opacity: 60%;
+        gap: 2px;
+
+        .weather-widget__location-icon {
+            width: 0.63rem;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .weather-widget__location-text {
+            font-size: 0.7rem;
+        }
+    }
+
+    &__condition {
+        grid-area: 2 / 1 / 3 / 2;
+        font-weight: 600;
+    }
+
+    &__weather-icon {
+        grid-area: 1 / 2 / 3 / 3;
+        justify-self: end;
+        width: 2.2rem;
+        height: 2.2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__temperature {
+        display: flex;
+        align-items: start;
+        font-weight: 600;
+        font-size: 5rem;
+        margin-top: $space-s;
+        line-height: 1;
+
+        span:last-child {
+            margin-top: $space-s;
+            font-size: 2.6rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $space-s;
+
+        p {
+            margin: 0;
+        }
+
+        .weather-widget__label {
+            font-size: 0.6rem;
+            opacity: 60%;
+        }
+
+        .weather-widget__value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            .weather-widget__unit {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    &__quote {
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-align: center;
+        padding: $space-m 0;
+        border-radius: 0.75rem;
+        width: 100%;
+        background: rgba(#525252, 10%);
+        border: rgba(#fff, 13%) 1px solid;
+        backdrop-filter: blur(0.1rem);
+        margin-top: $space-l;
+    }
+}

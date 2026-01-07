@@ -1,0 +1,62 @@
+@use "sass:map";
+
+$dark-1: #0a0e10;
+$dark-2: #11181c;
+$dark-3: #1a2328;
+$dark-4: #0c1316;
+
+$grey: #21323c;
+
+$border-accent-1: rgba(0, 255, 200, 0.2);
+$border-gray-1: #b5b5b5;
+$border-gray-2: #4b4b4b;
+
+$border-gradient-1: #0f161a;
+$border-gradient-2: #2b353b;
+
+$accent-1: #19ffc8;
+$accent-2: #00e6b0;
+$accent-1-gradient: #0f9978;
+$accent-1-gradient-blue: #19d5f1;
+
+$white: #fff;
+
+// отступы
+
+$base-font-size: 16px;
+
+// Базовый шаг
+$base-space-unit: 0.25rem; // 4px
+
+$spacers: (
+    "xxs": 0.0625rem,
+    // 1px
+    "xs": 0.125rem,
+    // 2px
+    "s": 0.25rem,
+    // 4px
+    "m": 0.5rem,
+    // 8px - base
+    "l": 0.75rem,
+    // 12px
+    "xl": 1rem,
+    // 16px
+    "2xl": 1.5rem,
+    // 24px (1rem + 0.5rem)
+    "3xl": 2.5rem,
+    // 40px (1.5rem + 1rem)
+    "4xl": 4rem,
+    // 64px (2.5rem + 1.5rem)
+    "5xl": 6.5rem // 104px (4rem + 2.5rem),,,,,,,,
+);
+
+$space-xxs: map.get($spacers, "xxs");
+$space-xs: map.get($spacers, "xs");
+$space-s: map.get($spacers, "s");
+$space-m: map.get($spacers, "m");
+$space-l: map.get($spacers, "l");
+$space-xl: map.get($spacers, "xl");
+$space-2xl: map.get($spacers, "2xl");
+$space-3xl: map.get($spacers, "3xl");
+$space-4xl: map.get($spacers, "4xl");
+$space-5xl: map.get($spacers, "5xl");

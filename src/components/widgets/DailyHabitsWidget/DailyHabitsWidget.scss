@@ -1,0 +1,101 @@
+@import "../../../styles/_variables.scss";
+
+.routine {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $space-2xl $space-xl $space-m;
+    aspect-ratio: 1 / 1;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 1.4rem;
+        width: 1.4rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        overflow-x: scroll;
+        max-height: 14vw;
+        gap: 0.3rem;
+        scrollbar-width: 0;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .routine__item {
+            display: flex;
+            align-items: center;
+            gap: $space-s;
+        }
+
+        .routine__text {
+            font-size: clamp(0.7rem, 3.1vw, 2rem);
+
+            &--checked {
+                opacity: 60%;
+            }
+        }
+
+        .routine__check {
+            width: clamp(0.4rem, 2vw, 1rem);
+            height: clamp(0.4rem, 2vw, 1rem);
+            border-radius: 1rem;
+            border: 1px #fff solid;
+            position: relative;
+
+            &--checked::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: url("../../../assets/icons/check_routine.svg")
+                    center center no-repeat;
+                background-size: 80%;
+                bottom: -0.5px;
+            }
+        }
+    }
+
+    &__progress {
+        display: flex;
+        align-items: center;
+        gap: $space-m;
+        width: 100%;
+
+        .routine__square {
+            flex: 1;
+            height: 1.25rem;
+            background: $grey;
+            margin: 0px;
+            border-radius: 0.3rem;
+
+            &--checked {
+                background: $accent-2;
+                box-shadow: rgba($accent-2, 25%) 0 0 0.7rem;
+            }
+        }
+    }
+
+    &__info {
+        text-align: center;
+        opacity: 60%;
+        color: #ddd;
+        font-size: 0.5rem;
+    }
+}
