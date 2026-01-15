@@ -1,37 +1,15 @@
 @import "../../../styles/_variables.scss";
 
 .next-task {
-    font-size: 0.7rem;
-    padding: $space-m $space-xl;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: $space-l;
+  padding: $space-m $space-xl;
 
-    &__divider {
-        height: 73%;
-        border-radius: 1rem;
-        width: 4px;
-        background: linear-gradient($accent-1, $accent-1-gradient-blue);
-        box-shadow: rgba($accent-1, 25%) 0 0 0.5rem;
-    }
+  &__divider {
+    background: linear-gradient($accent-1, $accent-1-gradient-blue);
+    box-shadow: rgba($accent-1, 25%) 0 0 0.5rem;
+  }
 
-    &__body {
-        height: 87%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__text {
-        color: $accent-2;
-        font-weight: 600;
-        font-size: 0.79rem;
-        text-shadow: rgba($accent-2, 25%) 0 0 0.6rem;
-    }
-
-    &__time {
-        font-size: 0.55rem;
-        opacity: 40%;
-    }
+  &__text {
+    color: $accent-2;
+    text-shadow: rgba($accent-2, 25%) 0 0 0.6rem;
+  }
 }

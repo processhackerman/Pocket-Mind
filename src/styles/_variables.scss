@@ -21,33 +21,26 @@ $accent-1-gradient-blue: #19d5f1;
 
 $white: #fff;
 
-// отступы
-
-$base-font-size: 16px;
-
-// Базовый шаг
-$base-space-unit: 0.25rem; // 4px
-
 $spacers: (
-    "xxs": 0.0625rem,
-    // 1px
-    "xs": 0.125rem,
-    // 2px
-    "s": 0.25rem,
-    // 4px
-    "m": 0.5rem,
-    // 8px - base
-    "l": 0.75rem,
-    // 12px
-    "xl": 1rem,
-    // 16px
-    "2xl": 1.5rem,
-    // 24px (1rem + 0.5rem)
-    "3xl": 2.5rem,
-    // 40px (1.5rem + 1rem)
-    "4xl": 4rem,
-    // 64px (2.5rem + 1.5rem)
-    "5xl": 6.5rem // 104px (4rem + 2.5rem),,,,,,,,
+  "xxs": 0.0625rem,
+  // 1px
+  "xs": 0.125rem,
+  // 2px
+  "s": 0.25rem,
+  // 4px
+  "m": 0.5rem,
+  // 8px - base
+  "l": 0.75rem,
+  // 12px
+  "xl": 1rem,
+  // 16px
+  "2xl": 1.5rem,
+  // 24px (1rem + 0.5rem)
+  "3xl": 2.5rem,
+  // 40px (1.5rem + 1rem)
+  "4xl": 4rem,
+  // 64px (2.5rem + 1.5rem)
+  "5xl": 6.5rem // 104px (4rem + 2.5rem),,,,
 );
 
 $space-xxs: map.get($spacers, "xxs");

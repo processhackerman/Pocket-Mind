@@ -1,33 +1,24 @@
 @import "../../../styles/_variables.scss";
 
 .management-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    max-width: 100%;
-    align-items: stretch;
-    gap: $space-l;
+  & > div {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient($dark-2, $dark-4);
+    border-radius: 1.5rem;
     position: relative;
-    z-index: 0;
 
-    & > div {
-        aspect-ratio: 1 / 1;
-        background: linear-gradient($dark-2, $dark-4);
-        border-radius: 1.5rem;
-        position: relative;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(
-                45deg,
-                $border-gradient-1,
-                $border-gradient-2
-            );
-            z-index: -1;
-            border-radius: 1.5rem;
-            padding: 1px;
-        }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(
+        45deg,
+        $border-gradient-1,
+        $border-gradient-2
+      );
+      z-index: -1;
+      border-radius: 1.5rem;
+      padding: 1px;
     }
+  }
 }

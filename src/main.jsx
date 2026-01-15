@@ -1,10 +1,9 @@
-import { createRoot } from 'react-dom/client'
-import './styles/main.scss'
-import App from './App.jsx'
-import { registerSW } from 'virtual:pwa-register'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import "./styles/main.scss";
+import App from "./App.jsx";
+import { registerSW } from "virtual:pwa-register";
 
-registerSW({ immediate: true })
+registerSW({ immediate: true });
 
-createRoot(document.getElementById('root')).render(
-  <App />
-)
+createRoot(document.getElementById("root")).render(<App />);

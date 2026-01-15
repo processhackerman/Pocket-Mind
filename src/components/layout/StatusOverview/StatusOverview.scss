@@ -1,16 +1,11 @@
 @import "../../../styles/_variables.scss";
 
 .status-overview {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 7fr 3fr;
-    gap: $space-m;
+  & > div:not(.weather-widget) {
+    background: linear-gradient($dark-2, $dark-4);
+  }
 
-    & > div:not(.weather-widget) {
-        background: linear-gradient($dark-2, $dark-4);
-    }
-
-    & > div {
-        border-radius: 1.5rem;
-    }
+  & > div {
+    border-radius: 1.5rem;
+  }
 }

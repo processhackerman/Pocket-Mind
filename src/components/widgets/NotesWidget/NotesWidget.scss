@@ -1,101 +1,42 @@
 @import "../../../styles/_variables.scss";
 
 .notes-widget {
-    padding: $space-xl;
-    padding-bottom: $space-l;
+  .notes-widget__title {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+
+  .notes-widget__label {
+    grid-area: 2 / 1 / span 1 / span 1;
+  }
+
+  .notes-widget__icon {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+
+  &__body {
+    background: linear-gradient(-25deg, #111e25, $dark-3);
+    box-shadow: rgba(#000, 25%) 0 0 0.75rem, inset rgba(#000, 25%) 0 0 0.5rem;
+  }
+
+  .notes-widget__item--updated .notes-widget__item-icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 1px;
+  }
+
+  &__item {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: $space-s;
+    font-size: 0.5rem;
 
-    &__header {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(2, auto);
-        justify-content: space-between;
-        align-items: center;
-
-        .notes-widget__title {
-            grid-area: 1 / 1 / span 1 / span 1;
-        }
-
-        .notes-widget__label {
-            grid-area: 2 / 1 / span 1 / span 1;
-        }
-
-        .notes-widget__icon {
-            grid-area: 1 / 2 / 3 / 3;
-            width: 1.8rem;
-            height: 1.8rem;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        }
+    &-text {
+      opacity: 70%;
     }
 
-    &__body {
-        text-align: center;
-        font-size: clamp(0.5rem, 3vw, 3rem);
-        padding: $space-m;
-        background: linear-gradient(-25deg, #111e25, $dark-3);
-        border-radius: 0.75rem;
-        box-shadow: rgba(#000, 25%) 0 0 0.75rem,
-            inset rgba(#000, 25%) 0 0 0.5rem;
+    &-icon {
+      width: 0.75rem;
+      height: 0.75rem;
     }
-
-    &__footer {
-        display: flex;
-        flex-direction: column;
-
-        gap: $space-l;
-    }
-
-    .notes-widget__item--updated .notes-widget__item-icon {
-        width: 0.5rem;
-        height: 0.5rem;
-        margin-left: 1px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: $space-xs;
-    }
-
-    &__item {
-        display: flex;
-        align-items: center;
-        gap: $space-s;
-        font-size: 0.5rem;
-
-        &-text {
-            opacity: 70%;
-        }
-
-        &-icon {
-            width: 0.75rem;
-            height: 0.75rem;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        }
-    }
-
-    &__tip {
-        font-size: 0.38rem;
-        text-align: center;
-        opacity: 40%;
-    }
+  }
 }
