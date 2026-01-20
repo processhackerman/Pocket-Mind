@@ -52,3 +52,17 @@ header {
   font-size: clamp(0.2rem, 2vw, 1rem);
   opacity: 40%;
 }
+
+.widget-header {
+  .title {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .label {
+    grid-area: 2 / 1 / 2 / 2;
+  }
+
+  .icon {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+}

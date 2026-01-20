@@ -1,15 +1,31 @@
 @import "../../../styles/_variables.scss";
 
 .overview {
-  .overview-widget__title {
-    grid-area: 1 / 1 / span 1 / span 1;
+  .item-title {
+    font-size: clamp(0.7rem, 0.5731rem + 0.5641vw, 1.25rem);
   }
 
-  .overview-widget__label {
-    grid-area: 2 / 1 / span 1 / span 1;
+  .progress-bar {
+    background: linear-gradient(90deg, #294250, $accent-2);
   }
 
-  .overview-widget__icon {
-    grid-area: 1 / 2 / 3 / 3;
+  .battery {
+    box-shadow: rgba(#fff, 30%) 0 0 0.5rem;
+  }
+
+  .battery-progress {
+    background: linear-gradient($accent-1-gradient-blue, $accent-1);
+    box-shadow:
+      rgba(#fff, 30%) 0 0 0.5rem,
+      inset rgba(0, 0, 0, 0.5) 0 0 1rem;
+  }
+
+  .review {
+    border: rgba($accent-2, 50%) 2px solid;
+    font-size: clamp(0.75rem, 0.7356rem + 0.0641vw, 0.8125rem);
+    background: $dark-3;
+    box-shadow:
+      rgba($accent-2, 10%) 0 0 0.5rem,
+      inset rgba(0, 0, 0, 0.5) 0 0 1rem;
   }
 }

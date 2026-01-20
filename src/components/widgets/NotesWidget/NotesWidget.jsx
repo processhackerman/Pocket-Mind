@@ -2,17 +2,12 @@ import "./NotesWidget.scss";
 import notes_icon from "../../../assets/icons/notes.png";
 import folder_icon from "../../../assets/icons/folder.svg";
 import clocks_icon from "../../../assets/icons/clocks.png";
+import WidgetHeader from "../../ui/WidgetHeader";
 
 export default function NotesWidget({ notes }) {
   return (
     <div className="notes-widget p-xl pb-l flex flex-col justify-between">
-      <div className="notes-widget__header grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-between items-center">
-        <div className="notes-widget__title title">Notes</div>
-        <div className="notes-widget__label label">Last edited note</div>
-        <div className="notes-widget__icon w-7 h-7">
-          <img src={notes_icon} alt="" />
-        </div>
-      </div>
+      <WidgetHeader icon={notes_icon} title="Notes" label="Last edited note" />
 
       <div className="notes-widget__body text-center text-[clamp(0.65rem,0.5404rem+0.4872vw,1.125rem)] p-m rounded-xl">
         {notes.lastText ? notes.lastText : "Buy notebookand charger"}

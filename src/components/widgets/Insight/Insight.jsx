@@ -8,7 +8,7 @@ import "./Insight.scss";
 
 export default function Insight({ insight }) {
   return (
-    <section className="insight relative z-0 my-3">
+    <section className="insight relative z-0">
       <div className="insight__inner relative py-2 px-4 rounded-3xl">
         <div className="insight__header flex justify-between items-center my-0.5">
           <div className="insight__logo">

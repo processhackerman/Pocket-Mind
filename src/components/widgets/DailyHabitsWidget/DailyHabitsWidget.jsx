@@ -1,6 +1,7 @@
 import "./DailyHabitsWidget.scss";
 import lightning_bolt from "../../../assets/icons/lightning-bolt.png";
 import checkIcon from "../../../assets/icons/check_routine.svg";
+import WidgetHeader from "../../ui/WidgetHeader";
 
 export default function DailyHabitsWidget({ routine }) {
   const completedCount = routine.filter((item) => item.checked).length;
@@ -15,20 +16,15 @@ export default function DailyHabitsWidget({ routine }) {
 
   return (
     <div className="routine flex flex-col justify-between aspect-square">
-      <div className="routine__header flex justify-between items-center">
-        <div className="routine__title title">Daily Habits</div>
-        <div className="routine__icon h-6 w-6">
-          <img
-            src={lightning_bolt}
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </div>
-      </div>
+      <WidgetHeader
+        icon={lightning_bolt}
+        title="Daily Habits"
+        label="Discipline"
+      />
 
       <div className="routine__tasks flex flex-col justify-start overflow-y-scroll max-h-[14vw] gap-[0.3rem] scrollbar-hide">
         {routine.map((item, index) => (
-          <div className="routine__item flex items-center gap-1" key={index}>
+          <div className="flex items-center gap-1" key={index}>
             <div
               className={`routine__check rounded-full relative  ${
                 item.checked ? "routine__check--checked opacity-60" : ""

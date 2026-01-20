@@ -1,16 +1,11 @@
 import "./TasksWidget.scss";
 import tasks_icon from "../../../assets/icons/tasks.png";
+import WidgetHeader from "../../ui/WidgetHeader";
 
 export default function TasksWidget({ tasks }) {
   return (
     <div className="tasks-widget p-xl pb-l flex flex-col justify-between">
-      <div className="tasks-widget__header grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-between items-center">
-        <div className="tasks-widget__title title">Tasks</div>
-        <div className="tasks-widget__label label">Today’s plan:</div>
-        <div className="tasks-widget__icon w-7 h-7">
-          <img src={tasks_icon} alt="" />
-        </div>
-      </div>
+      <WidgetHeader icon={tasks_icon} label="Today’s plan:" title="Tasks" />
 
       <div className="tasks-widget__body">
         <ul className="tasks-widget__list p-0 list-none">

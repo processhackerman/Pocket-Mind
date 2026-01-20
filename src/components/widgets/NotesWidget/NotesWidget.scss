@@ -1,18 +1,6 @@
 @import "../../../styles/_variables.scss";
 
 .notes-widget {
-  .notes-widget__title {
-    grid-area: 1 / 1 / span 1 / span 1;
-  }
-
-  .notes-widget__label {
-    grid-area: 2 / 1 / span 1 / span 1;
-  }
-
-  .notes-widget__icon {
-    grid-area: 1 / 2 / 3 / 3;
-  }
-
   &__body {
     background: linear-gradient(-25deg, #111e25, $dark-3);
     box-shadow: rgba(#000, 25%) 0 0 0.75rem, inset rgba(#000, 25%) 0 0 0.5rem;

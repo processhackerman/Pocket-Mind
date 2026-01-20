@@ -1,0 +1,17 @@
+@import "../../../styles/_variables.scss";
+
+.quote {
+  background: linear-gradient($dark-2, $dark-4);
+  border: $dark-3 1px solid;
+}
+
+.quote-container {
+  background: $dark-3;
+  box-shadow:
+    rgba(#000, 0.25) 0 0 1rem,
+    inset rgba(#000, 0.35) 0 0 1rem;
+}
+
+.quote-text {
+  text-shadow: rgba(#fff, 35%) 0 0 1rem;
+}

@@ -1,25 +1,126 @@
 import "./Overview.scss";
 import trending_up from "../../../assets/icons/trending-up.png";
+import moon_icon from "../../../assets/icons/moon.svg";
+import droplet_icon from "../../../assets/icons/droplet.svg";
+import step_icon from "../../../assets/icons/footstep.png";
+import check_icon from "../../../assets/icons/check_routine.svg";
+import WidgetHeader from "../../ui/WidgetHeader";
 
 export default function Overview() {
-  return (
-    <div className="overview p-xl">
-      <div className="overview__header grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-between items-center">
-        <div className="overview-widget__title title">Daily overview</div>
-        <div className="overview-widget__label label">Sunday, December 14</div>
-        <div className="overview-widget__icon w-7 h-7">
-          <img src={trending_up} alt="" />
-        </div>
-      </div>
+  const sleepDots = [true, true, true, true, true, true, false, false];
+  const waterSegments = [true, true, true, true, true, true, false, false];
+  const stepsSegments = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ];
+  const completedTasksPercentage = "70%";
+  const resultPercentage = "70%";
 
-      <div className="overview__info">
-        <div className="overview__stats">
-          <div className="overview__item">
-            <div className="overview__item-icon"></div>
-            <div className="overview__item-title"></div>
-            <div className="overview__item-progress"></div>
+  const sleepTime = "6h 42m";
+  const waterProgress = "6 / 8";
+  const stepsCounter = "8,237";
+
+  return (
+    <div className="overview p-xl flex flex-col justify-between">
+      <WidgetHeader
+        icon={trending_up}
+        title="Daily overview"
+        label="Sunday, December 14"
+      />
+
+      <div className="flex justify-between items-stretch my-l gap-3">
+        <div className="grid grid-cols-2 grid-rows-2 gap-2">
+          <div className="flex flex-col items-stretch justify-start gap-1">
+            <div className="flex items-center justify-start gap-1">
+              <div className="w-4 h-4">
+                <img src={moon_icon} alt="" className="w-full h-full" />
+              </div>
+              <div className="item-title font-semibold">{sleepTime}</div>
+            </div>
+            <div className="flex gap-0.5">
+              {sleepDots.map((item, index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 aspect-square rounded-full ${
+                    item ? "bg-white" : "border-2 border-white"
+                  }`}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-stretch justify-start gap-1">
+            <div className="flex items-center justify-start gap-1">
+              <div className="w-4 h-4">
+                <img src={droplet_icon} alt="" className="w-full h-full" />
+              </div>
+              <div className="item-title font-semibold">{waterProgress}</div>
+            </div>
+            <div className="flex gap-[1px] rounded-full overflow-hidden">
+              {waterSegments.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex-1 h-2 aspect-square ${
+                    item ? "bg-accent-primary" : "bg-gray-800"
+                  }`}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-stretch justify-start gap-1">
+            <div className="flex items-center justify-start gap-1">
+              <div className="w-4 h-4">
+                <img src={step_icon} alt="" className="w-full h-full" />
+              </div>
+              <div className="item-title font-semibold">{stepsCounter}</div>
+            </div>
+            <div className="flex gap-[1px] rounded-full overflow-hidden">
+              {waterSegments.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex-1 h-2 aspect-square ${
+                    item ? "bg-accent-primary" : "bg-gray-800"
+                  }`}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-stretch justify-start gap-1">
+            <div className="flex items-center justify-start gap-1">
+              <div className="w-4 h-4">
+                <img src={check_icon} alt="" className="w-full h-full" />
+              </div>
+              <div className="item-title font-semibold">
+                {completedTasksPercentage}
+              </div>
+            </div>
+            <div className="rounded-full overflow-hidden bg-gray-800 h-2">
+              <div
+                className="progress-bar rounded-full h-full"
+                style={{ width: completedTasksPercentage }}
+              ></div>
+            </div>
           </div>
         </div>
+        <div className="battery flex flex-col flex-1 justify-end border-white border-2 rounded-xl bg-black overflow-hidden">
+          <div
+            className="battery-progress relative w-full"
+            style={{ height: resultPercentage }}
+          >
+            <div className="battery-percentage absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-black text-xs font-bold">
+              {resultPercentage}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="review w-full flex-1 flex items-center justify-center rounded-xl">
+        It's amazing result!
       </div>
     </div>
   );
