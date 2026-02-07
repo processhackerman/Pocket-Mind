@@ -15,14 +15,14 @@ export default function DailyHabitsWidget({ routine }) {
   const orderedProgressItems = [...completed_tasks, ...incompleted_tasks];
 
   return (
-    <div className="routine flex flex-col justify-between aspect-square">
+    <div className="routine flex flex-col justify-between aspect-square gap-3">
       <WidgetHeader
         icon={lightning_bolt}
         title="Daily Habits"
         label="Discipline"
       />
 
-      <div className="routine__tasks flex flex-col justify-start overflow-y-scroll max-h-[14vw] gap-[0.3rem] scrollbar-hide">
+      <div className="routine__tasks flex flex-col max-h-[40%] overflow-y-auto gap-[0.2rem] scrollbar-hide">
         {routine.map((item, index) => (
           <div className="flex items-center gap-1" key={index}>
             <div
@@ -38,7 +38,7 @@ export default function DailyHabitsWidget({ routine }) {
               )}
             </div>
             <div
-              className={`routine__text text-[clamp(0.75rem,0.6923rem+0.2564vw,1rem)] ${
+              className={`routine__text text-[clamp(0.75rem,2.9vw,5rem)] ${
                 item.checked ? "routine__text--checked opacity-60" : ""
               }`}
             >

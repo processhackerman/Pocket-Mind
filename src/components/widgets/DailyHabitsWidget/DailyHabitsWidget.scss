@@ -4,6 +4,9 @@
   padding: $space-xl $space-xl $space-m;
 
   &__tasks {
+    & > div {
+    }
+
     .routine__check {
       width: clamp(0.4rem, 2.3vw, 1rem);
       height: clamp(0.4rem, 2.3vw, 1rem);

@@ -35,8 +35,8 @@ export default function Overview() {
         label="Sunday, December 14"
       />
 
-      <div className="flex justify-between items-stretch my-l gap-3">
-        <div className="grid grid-cols-2 grid-rows-2 gap-2">
+      <div className="flex justify-between items-stretch my-l gap-3 flex-1">
+        <div className="grid grid-cols-2 grid-rows-2 gap-2 flex-1">
           <div className="flex flex-col items-stretch justify-start gap-1">
             <div className="flex items-center justify-start gap-1">
               <div className="w-4 h-4">
@@ -48,7 +48,7 @@ export default function Overview() {
               {sleepDots.map((item, index) => (
                 <div
                   key={index}
-                  className={`w-2 h-2 aspect-square rounded-full ${
+                  className={`w-2 h-2 rounded-full ${
                     item ? "bg-white" : "border-2 border-white"
                   }`}
                 ></div>
@@ -66,7 +66,7 @@ export default function Overview() {
               {waterSegments.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex-1 h-2 aspect-square ${
+                  className={`flex-1 h-2 ${
                     item ? "bg-accent-primary" : "bg-gray-800"
                   }`}
                 ></div>
@@ -84,7 +84,7 @@ export default function Overview() {
               {waterSegments.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex-1 h-2 aspect-square ${
+                  className={`flex-1 h-2 ${
                     item ? "bg-accent-primary" : "bg-gray-800"
                   }`}
                 ></div>
@@ -108,7 +108,7 @@ export default function Overview() {
             </div>
           </div>
         </div>
-        <div className="battery flex flex-col flex-1 justify-end border-white border-2 rounded-xl bg-black overflow-hidden">
+        <div className="battery flex flex-col justify-end border-white border-2 rounded-xl bg-black overflow-hidden min-w-[20%] w-[20%]">
           <div
             className="battery-progress relative w-full"
             style={{ height: resultPercentage }}
@@ -119,7 +119,7 @@ export default function Overview() {
           </div>
         </div>
       </div>
-      <div className="review w-full flex-1 flex items-center justify-center rounded-xl">
+      <div className="review w-full py-[3%] flex items-center justify-center rounded-xl">
         It's amazing result!
       </div>
     </div>

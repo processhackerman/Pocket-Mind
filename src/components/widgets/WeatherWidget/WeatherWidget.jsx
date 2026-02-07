@@ -8,15 +8,15 @@ export default function WeatherWidget({ weather }) {
   return (
     <div className="weather-widget flex flex-col justify-between">
       <div className="weather-widget__header grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] justify-between items-end">
-        <div className="weather-widget__location-group flex justify-start items-center opacity-60 g-[2px]">
-          <div className="weather-widget__location-icon w-2.5 h-auto">
+        <div className="weather-widget__location-group flex justify-start items-center opacity-60 gap-[0.5vw]">
+          <div className="weather-widget__location-icon h-auto">
             <img
               src={map_icon}
               alt=""
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="weather-widget__location-text text-xs">
+          <div className="weather-widget__location-text">
             {weather.location}
           </div>
         </div>
@@ -30,9 +30,8 @@ export default function WeatherWidget({ weather }) {
         </div>
       </div>
 
-      <div className="weather-widget__temperature flex items-start font-semibold text-7xl mt-1 leading-none">
-        <span>{weather.currentTemp}</span>
-        <span className="mt-1 text-5xl">&deg;</span>
+      <div className="weather-widget__temperature flex items-start font-semibold mt-1 leading-none">
+        <span>{weather.currentTemp}&deg;</span>
       </div>
 
       <div className="weather-widget__info flex justify-between items-stretch">

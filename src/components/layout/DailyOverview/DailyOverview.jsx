@@ -5,7 +5,7 @@ import Streak from "../../ui/Overview/Streak";
 
 export default function DailyOverview() {
   return (
-    <section className="daily-overview grid grid-rows-2 grid-cols-[25fr_75fr] gap-l relative z-0">
+    <section className="daily-overview grid grid-rows-2 grid-cols-[auto_1fr] items-stretch gap-l relative z-0">
       <AddGlass />
       <Streak />
       <Overview />
