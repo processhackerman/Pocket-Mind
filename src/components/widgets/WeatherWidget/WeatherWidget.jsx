@@ -55,7 +55,7 @@ export default function WeatherWidget({ weather }) {
         </div>
       </div>
 
-      <div className="weather-widget__quote text-tiny font-semibold text-center p-2 px-0 rounded-xl w-full mt-3 backdrop-blur-sm">
+      <div className="weather-widget__quote font-semibold text-center p-2 px-0 rounded-xl w-full mt-3 backdrop-blur-sm">
         {weather.quote}
       </div>
     </div>

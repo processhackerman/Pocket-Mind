@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@function fluid($min-size, $max-size, $min-vw: 340px, $max-vw: 1920px) {
+  $min-size-n: math.div($min-size, $min-size * 0 + 1);
+  $max-size-n: math.div($max-size, $max-size * 0 + 1);
+  $min-vw-n: math.div($min-vw, $min-vw * 0 + 1);
+  $max-vw-n: math.div($max-vw, $max-vw * 0 + 1);
+
+  $slope: math.div($max-size-n - $min-size-n, $max-vw-n - $min-vw-n);
+  $base: $min-size-n - $slope * $min-vw-n;
+
+  $preferred: calc(#{$slope * 100}vw + #{$base}px);
+
+  @return clamp(#{$min-size-n}px, $preferred, #{$max-size-n}px);
+}

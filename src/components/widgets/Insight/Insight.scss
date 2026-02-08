@@ -1,5 +1,3 @@
-@import "../../../styles/_variables.scss";
-
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -9,6 +7,7 @@
 .insight {
   &__inner {
     background: linear-gradient($dark-2, $dark-4);
+    border-radius: clamp(1.375rem, 1.254rem + 0.518vw, 1.875rem);
   }
 
   &::after,
@@ -25,7 +24,7 @@
     );
     z-index: -1;
     padding: 1px;
-    border-radius: 1.5rem;
+    border-radius: clamp(1.375rem, 1.254rem + 0.518vw, 1.875rem);
     animation: 3s spin linear infinite;
   }
 
@@ -36,7 +35,14 @@
 
   &__body {
     background: linear-gradient(135deg, $dark-3 26%, #111e25 100%);
-    box-shadow: rgba(#000, 10%) 0 0 0.7rem, inset rgba(#000, 25%) 0 0 1.2rem;
+    box-shadow:
+      rgba(#000, 10%) 0 0 0.7rem,
+      inset rgba(#000, 25%) 0 0 1.2rem;
+    font-size: fluid(12, 22);
+  }
+
+  &__advice {
+    font-size: fluid(10, 11);
   }
 
   &__footer {
@@ -47,7 +53,7 @@
       gap: $space-s;
 
       .insight__footer-icon {
-        width: 0.7rem;
+        width: fluid(8, 15);
 
         img {
           width: 100%;
@@ -57,7 +63,7 @@
       }
 
       .insight__footer-text {
-        font-size: 0.5rem;
+        font-size: fluid(8, 13);
         font-weight: 600;
         margin-bottom: $space-xs;
       }

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+import path from "path";
 
 const manifest = {
   theme_color: "#0a0e10",
@@ -41,4 +42,16 @@ export default defineConfig({
       manifest: manifest,
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/_mixins.scss" as *; \n@use "@/styles/_variables.scss" as *; \n`,
+      },
+    },
+  },
 });

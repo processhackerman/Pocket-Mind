@@ -37,19 +37,21 @@ header {
       rgba(#fff, 0) 75%,
       #fff 100%
     );
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     mask-composite: exclude;
   }
 }
 
 .title {
-  font-size: clamp(0.5rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 0.879rem + 0.518vw, 1.5rem);
   font-weight: 600;
   text-shadow: rgba(#fff, 25%) 0 0 0.5rem;
 }
 
 .label {
-  font-size: clamp(0.2rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 0.409rem + 0.388vw, 0.875rem);
   opacity: 40%;
 }
 
@@ -64,5 +66,15 @@ header {
 
   .icon {
     grid-area: 1 / 2 / 3 / 3;
+  }
+}
+
+.logo {
+  .logo__text {
+    font-size: clamp(0.875rem, 0.723rem + 0.647vw, 1.5rem);
+  }
+
+  .logo__icon {
+    width: clamp(1.188rem, 1.036rem + 0.647vw, 1.813rem);
   }
 }

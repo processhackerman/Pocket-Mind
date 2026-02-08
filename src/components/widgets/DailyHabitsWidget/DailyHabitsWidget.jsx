@@ -38,7 +38,7 @@ export default function DailyHabitsWidget({ routine }) {
               )}
             </div>
             <div
-              className={`routine__text text-[clamp(0.75rem,2.9vw,5rem)] ${
+              className={`routine__text ${
                 item.checked ? "routine__text--checked opacity-60" : ""
               }`}
             >
@@ -59,7 +59,7 @@ export default function DailyHabitsWidget({ routine }) {
         ))}
       </div>
 
-      <div className="routine__info text-center opacity-60 text-[0.5rem]">{`${completedCount} of ${totalCount} completed · ${percentage}%`}</div>
+      <div className="routine__info text-center opacity-60">{`${completedCount} of ${totalCount} completed · ${percentage}%`}</div>
     </div>
   );
 }

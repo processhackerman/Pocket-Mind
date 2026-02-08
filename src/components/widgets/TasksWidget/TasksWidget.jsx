@@ -11,7 +11,7 @@ export default function TasksWidget({ tasks }) {
         <ul className="tasks-widget__list p-0 list-none">
           {tasks?.map((item, index) => (
             <li
-              className="tasks-widget__item text-[clamp(0.6rem,0.5077rem+0.4103vw,1rem)] indent-[3vw] leading-normal relative"
+              className="tasks-widget__item indent-[3vw] leading-normal relative"
               key={index}
             >
               {item}

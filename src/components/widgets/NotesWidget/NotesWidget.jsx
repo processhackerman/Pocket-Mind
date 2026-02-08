@@ -9,7 +9,7 @@ export default function NotesWidget({ notes }) {
     <div className="notes-widget p-xl pb-l flex flex-col justify-between">
       <WidgetHeader icon={notes_icon} title="Notes" label="Last edited note" />
 
-      <div className="notes-widget__body text-center text-[clamp(0.65rem,0.5404rem+0.4872vw,1.125rem)] p-m rounded-xl">
+      <div className="notes-widget__body text-center p-m rounded-xl flex flex-1 items-center justify-center">
         {notes.lastText ? notes.lastText : "Buy notebookand charger"}
       </div>
 

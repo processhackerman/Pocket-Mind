@@ -9,7 +9,7 @@ import "./Insight.scss";
 export default function Insight({ insight }) {
   return (
     <section className="insight relative z-0">
-      <div className="insight__inner relative py-2 px-4 rounded-3xl">
+      <div className="insight__inner relative py-2 px-4">
         <div className="insight__header flex justify-between items-center my-0.5">
           <div className="insight__logo">
             <Logo text="AI Insight" />
@@ -23,14 +23,14 @@ export default function Insight({ insight }) {
           </div>
         </div>
 
-        <div className="insight__body text-xs p-l rounded-2xl">
+        <div className="insight__body p-l rounded-2xl">
           <div className="insight__main-text font-semibold leading-snug">
             {formatText(insight?.mainText)}
           </div>
           <div className="insight__advices mt-s flex flex-col gap-xs">
             {insight?.advices?.map((item, index) => (
               <div
-                className="insight__advice flex items-center gap-s text-tiny leading-tight"
+                className="insight__advice flex items-center gap-s leading-tight"
                 key={index}
               >
                 <span className="insight__advice-icon">&rarr;</span>

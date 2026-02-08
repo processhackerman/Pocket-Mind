@@ -1,5 +1,3 @@
-@import "../../../styles/_variables.scss";
-
 .daily-overview {
   .streak-widget,
   .add-glass-button {
@@ -14,7 +12,7 @@
   & > div {
     position: relative;
     background: linear-gradient($dark-2, $dark-4);
-    border-radius: 1.5rem;
+    border-radius: clamp(1.375rem, 1.254rem + 0.518vw, 1.875rem);
 
     &::before {
       content: "";
