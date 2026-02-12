@@ -6,8 +6,8 @@ export default function WeatherWidget({ weather }) {
   const iconPath = `${import.meta.env.BASE_URL}icons/${normalizedName}.svg`;
 
   return (
-    <div className="weather-widget flex flex-col justify-between">
-      <div className="weather-widget__header grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] justify-between items-end">
+    <div className="weather-widget flex flex-col justify-between rounded-widget">
+      <div className="weather-widget__header grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] justify-between items-end mt-1">
         <div className="weather-widget__location-group flex justify-start items-center opacity-60 gap-[0.5vw]">
           <div className="weather-widget__location-icon h-auto">
             <img
@@ -25,7 +25,7 @@ export default function WeatherWidget({ weather }) {
           {weather.condition}
         </div>
 
-        <div className="weather-widget__weather-icon justify-self-end w-9 h-9">
+        <div className="weather-widget__weather-icon justify-self-end h-auto aspect-square">
           <img src={iconPath} alt="" className="w-full h-full object-contain" />
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function WeatherWidget({ weather }) {
         </div>
       </div>
 
-      <div className="weather-widget__quote font-semibold text-center p-2 px-0 rounded-xl w-full mt-3 backdrop-blur-sm">
+      <div className="weather-widget__quote font-semibold min-h-[13%] flex items-center justify-center px-0 rounded-widget w-full mt-3 backdrop-blur-sm">
         {weather.quote}
       </div>
     </div>

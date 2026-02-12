@@ -1,31 +1,33 @@
 .daily-overview {
+  // Mobile defaults
   .streak-widget,
   .add-glass-button {
     aspect-ratio: 1 / 1;
-    flex: 1;
+    background: linear-gradient($dark-2, $dark-4);
+    border-radius: $rounded-widget;
   }
-
   .overview {
     grid-area: 1 / 2 / 3 / 3;
   }
 
-  & > div {
-    position: relative;
-    background: linear-gradient($dark-2, $dark-4);
-    border-radius: clamp(1.375rem, 1.254rem + 0.518vw, 1.875rem);
+  // Tablet/PC overrides
+  @media (min-width: 768px) {
+    display: block; // Stop being a complex grid
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background: linear-gradient(
-        45deg,
-        $border-gradient-1,
-        $border-gradient-2
-      );
-      z-index: -1;
-      border-radius: 1.55rem;
-      padding: 1px;
+    .overview {
+      grid-area: unset;
+      width: 100%;
+      height: 100%;
+      min-height: fluid(300, 400); // Using your fluid function
     }
+  }
+}
+
+// Battery Vertical Specifics
+.battery-v {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  &__fill {
+    transition: height 1s ease-out;
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
   }
 }

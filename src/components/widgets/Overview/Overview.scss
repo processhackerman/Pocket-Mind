@@ -1,4 +1,5 @@
 .overview {
+  background: linear-gradient($dark-2, $dark-4);
   .item-title {
     font-size: clamp(0.7rem, 0.5731rem + 0.5641vw, 1.25rem);
   }
@@ -25,5 +26,13 @@
     box-shadow:
       rgba($accent-2, 10%) 0 0 0.5rem,
       inset rgba(0, 0, 0, 0.5) 0 0 1rem;
+  }
+
+  &__message-box {
+    border-color: $accent-2;
+    box-shadow:
+      rgba($accent-2, 25%) 0 0 1rem,
+      inset rgba(#000, 50%) 0 0 2rem;
+    background: linear-gradient(#1a2328, #233138);
   }
 }

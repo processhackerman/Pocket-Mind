@@ -1,11 +1,15 @@
 import "./TasksWidget.scss";
-import tasks_icon from "../../../assets/icons/tasks.png";
 import WidgetHeader from "../../ui/WidgetHeader";
+import { ClipboardList } from "lucide-react";
 
 export default function TasksWidget({ tasks }) {
   return (
     <div className="tasks-widget p-xl pb-l flex flex-col justify-between">
-      <WidgetHeader icon={tasks_icon} label="Today’s plan:" title="Tasks" />
+      <WidgetHeader
+        icon={<ClipboardList className="w-full h-full" />}
+        label="Today’s plan:"
+        title="Tasks"
+      />
 
       <div className="tasks-widget__body">
         <ul className="tasks-widget__list p-0 list-none">
@@ -14,7 +18,7 @@ export default function TasksWidget({ tasks }) {
               className="tasks-widget__item indent-[3vw] leading-normal relative"
               key={index}
             >
-              {item}
+              {item.title}
             </li>
           ))}
         </ul>

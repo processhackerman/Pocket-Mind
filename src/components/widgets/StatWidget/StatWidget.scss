@@ -1,0 +1,49 @@
+.stat-card {
+  background: rgba(17, 25, 31, 0.8);
+  border-radius: fluid(16, 24, 768, 1920);
+  padding: fluid(12, 20, 768, 1920);
+  display: flex;
+  flex-direction: column;
+  gap: fluid(12, 16, 768, 1920);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__info {
+    display: flex;
+    gap: fluid(5, 14, 768, 1920);
+    align-items: center;
+  }
+
+  &__icon {
+    width: fluid(15, 28, 768, 1920);
+    height: fluid(15, 28, 768, 1920);
+    color: $accent-2; // Your Mint accent
+    filter: drop-shadow(rgba($accent-2, 50%) 0 0 0.5rem);
+  }
+
+  &__title {
+    font-size: fluid-rem(1rem, 1.125rem, 768, 1920);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: fluid-rem(0.4rem, 0.8125rem, 768, 1920);
+    color: #5d6b75; // Dimmer gray for target text
+  }
+
+  &__value {
+    font-size: fluid-rem(1rem, 1.125rem, 768, 1920);
+    font-weight: 600;
+    color: $accent-2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

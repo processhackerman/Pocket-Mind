@@ -13,3 +13,25 @@
 
   @return clamp(#{$min-size-n}px, $preferred, #{$max-size-n}px);
 }
+
+@function fluid-rem(
+  $min-size-rem,
+  $max-size-rem,
+  $min-vw: 340px,
+  $max-vw: 1920px
+) {
+  $min-size: math.div($min-size-rem, 1rem) * 16;
+  $max-size: math.div($max-size-rem, 1rem) * 16;
+
+  $min-vw-n: math.div($min-vw, $min-vw * 0 + 1);
+  $max-vw-n: math.div($max-vw, $max-vw * 0 + 1);
+
+  $slope: math.div($max-size - $min-size, $max-vw-n - $min-vw-n);
+  $intercept: $min-size - $slope * $min-vw-n;
+
+  $intercept-rem: math.div($intercept, 16) * 1rem;
+
+  $preferred: calc(#{$slope * 100}vw + #{$intercept-rem});
+
+  @return clamp(#{$min-size-rem}, $preferred, #{$max-size-rem});
+}

@@ -1,25 +1,23 @@
 import Logo from "../../ui/Logo";
-import arrow_up from "../../../assets/icons/arrow-up.svg";
-import thermometer_icon from "../../../assets/icons/thermometer.png";
-import tasks_icon from "../../../assets/icons/tasks.png";
-import noter_icon from "../../../assets/icons/notes.png";
 import formatText from "../../../lib/formatText.jsx";
 import "./Insight.scss";
+import {
+  ArrowUp,
+  ClipboardList,
+  NotebookTabs,
+  Thermometer,
+} from "lucide-react";
 
 export default function Insight({ insight }) {
   return (
-    <section className="insight relative z-0">
+    <section className="insight relative z-0 md:hidden">
       <div className="insight__inner relative py-2 px-4">
         <div className="insight__header flex justify-between items-center my-0.5">
           <div className="insight__logo">
             <Logo text="AI Insight" />
           </div>
           <div className="insight__icon w-[1.8rem] h-[1.8rem]">
-            <img
-              src={arrow_up}
-              alt=""
-              className="w-full h-full object-contain"
-            />
+            <ArrowUp className="w-full h-full" />
           </div>
         </div>
 
@@ -27,8 +25,8 @@ export default function Insight({ insight }) {
           <div className="insight__main-text font-semibold leading-snug">
             {formatText(insight?.mainText)}
           </div>
-          <div className="insight__advices mt-s flex flex-col gap-xs">
-            {insight?.advices?.map((item, index) => (
+          <div className="insight__advice mt-s flex flex-col gap-xs">
+            {insight?.advice?.map((item, index) => (
               <div
                 className="insight__advice flex items-center gap-s leading-tight"
                 key={index}
@@ -43,19 +41,19 @@ export default function Insight({ insight }) {
         <div className="insight__footer flex justify-between items-center my-l px-l">
           <div className="insight__footer-item insight__footer-item--temperature">
             <div className="insight__footer-icon">
-              <img src={thermometer_icon} alt="" />
+              <Thermometer className="w-full h-full" />
             </div>
             <div className="insight__footer-text">Temp trend: &darr;</div>
           </div>
           <div className="insight__footer-item insight__footer-item--tasks">
             <div className="insight__footer-icon">
-              <img src={tasks_icon} alt="" />
+              <ClipboardList className="w-full h-full" />
             </div>
             <div className="insight__footer-text">Tasks today: 5</div>
           </div>
           <div className="insight__footer-item insight__footer-item--notes">
             <div className="insight__footer-icon">
-              <img src={noter_icon} alt="" />
+              <NotebookTabs className="w-full h-full" />
             </div>
             <div className="insight__footer-text">Notes updates: 1</div>
           </div>

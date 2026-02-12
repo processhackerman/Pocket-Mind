@@ -1,9 +1,0 @@
-.status-overview {
-  & > div:not(.weather-widget) {
-    background: linear-gradient($dark-2, $dark-4);
-  }
-
-  & > div {
-    border-radius: 1.5rem;
-  }
-}

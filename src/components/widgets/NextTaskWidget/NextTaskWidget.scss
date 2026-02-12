@@ -1,13 +1,40 @@
 .next-task {
-  padding: $space-m $space-xl;
+  @media (min-width: 768px) {
+    gap: fluid-rem(1rem, 1.5rem, 768, 1920);
+  }
+
+  background: linear-gradient($dark-2, $dark-4);
+  padding: 0.2rem fluid-rem(1rem, 1.3rem, 360, 768);
+
+  &__header {
+    font-size: fluid-rem(0.55rem, 0.8rem, 360, 768);
+    @media (min-width: 768px) {
+      font-size: fluid-rem(0.9rem, 0.8rem, 768, 1920);
+    }
+    line-height: 1;
+  }
 
   &__divider {
     background: linear-gradient($accent-1, $accent-1-gradient-blue);
     box-shadow: rgba($accent-1, 25%) 0 0 0.5rem;
+    width: fluid-rem(0.3rem, 0.5rem, 360, 768);
   }
 
   &__text {
     color: $accent-2;
     text-shadow: rgba($accent-2, 25%) 0 0 0.6rem;
+    font-size: fluid-rem(0.75rem, 1.3rem, 360, 768);
+    @media (min-width: 768px) {
+      font-size: fluid-rem(1.3rem, 2rem, 768, 1920);
+    }
+    line-height: 1;
+  }
+
+  &__time {
+    font-size: fluid-rem(0.55rem, 0.8rem, 360, 768);
+    line-height: 1;
+    @media (min-width: 768px) {
+      font-size: fluid-rem(0.9rem, 0.8rem, 768, 1920);
+    }
   }
 }

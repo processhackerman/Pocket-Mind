@@ -1,0 +1,67 @@
+.tasks-widget {
+  background: #0d1418;
+  border-radius: fluid(20, 24);
+  padding: fluid(16, 24);
+  display: flex;
+  flex-direction: column;
+  gap: fluid(16, 20);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: fluid-rem(1.125rem, 1.5rem);
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  &__subtitle {
+    font-size: fluid-rem(0.5rem, 0.875rem);
+    color: #5d6b75;
+  }
+
+  &__scroll-area {
+    display: flex;
+    gap: fluid(12, 16);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card {
+    flex: 0 0 calc(50% - fluid(6, 8));
+    overflow: hidden;
+    flex-direction: column;
+    scroll-snap-align: start;
+    background: #111a1f;
+    border-radius: fluid(16, 20);
+    padding: fluid(16, 20);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: fluid(120, 140);
+  }
+
+  &__divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    margin: fluid(12, 16) 0;
+  }
+
+  .task-title {
+    font-size: fluid-rem(0.7rem, 1rem);
+  }
+}

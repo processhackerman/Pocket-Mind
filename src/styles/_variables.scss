@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "mixins";
 
 $dark-1: #0a0e10;
 $dark-2: #11181c;
@@ -20,6 +21,8 @@ $accent-1-gradient: #0f9978;
 $accent-1-gradient-blue: #19d5f1;
 
 $white: #fff;
+
+$rounded-widget: mixins.fluid-rem(1rem, 1.875rem);
 
 $spacers: (
   "xxs": 0.0625rem,

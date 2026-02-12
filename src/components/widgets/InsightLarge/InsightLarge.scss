@@ -1,0 +1,71 @@
+.insight-large {
+  &__inner {
+    padding: fluid-rem(1.7rem, 1.5rem, 768, 1920)
+      fluid-rem(1.25rem, 1.5rem, 768, 1920);
+
+    background: linear-gradient($dark-2, $dark-4);
+    .divider {
+      background: linear-gradient(
+        rgba(#fff, 0),
+        rgba(#fff, 0.15),
+        rgba(#fff, 0)
+      );
+      width: 1.5px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 75%;
+      width: 10px;
+      border-radius: $rounded-widget;
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #00e6b0;
+      box-shadow: rgba(#00e6b0, 0.25) 0 0 1rem;
+    }
+  }
+
+  &__buttons {
+    font-size: fluid(11, 16);
+    white-space: nowrap;
+
+    & > button {
+      border-radius: 0.75rem;
+    }
+  }
+
+  &__image {
+    width: fluid(89, 158);
+    height: fluid(89, 158);
+    img {
+      filter: drop-shadow(rgba(#fff, 0.3) 0 0 1rem);
+    }
+  }
+
+  .button-ai-chat {
+    background: linear-gradient(90deg, #00c093, #008062);
+  }
+  .button-analysis {
+    background: linear-gradient(90deg, #00b1cc, #0b6c7b);
+  }
+
+  &__button {
+    padding: fluid-rem(0.6rem, 1rem, 768, 1920) fluid-rem(1rem, 1rem, 768, 1920);
+  }
+
+  .insight__footer-item {
+    padding: $space-m 0;
+    background: linear-gradient(90deg, #1f9183, #13553e);
+    border-radius: 1rem;
+
+    &--tasks {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    &--notes {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+  }
+}

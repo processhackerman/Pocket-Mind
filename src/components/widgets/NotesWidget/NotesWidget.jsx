@@ -1,13 +1,15 @@
 import "./NotesWidget.scss";
-import notes_icon from "../../../assets/icons/notes.png";
-import folder_icon from "../../../assets/icons/folder.svg";
-import clocks_icon from "../../../assets/icons/clocks.png";
 import WidgetHeader from "../../ui/WidgetHeader";
+import { Clock, Folder, NotebookIcon } from "lucide-react";
 
 export default function NotesWidget({ notes }) {
   return (
-    <div className="notes-widget p-xl pb-l flex flex-col justify-between">
-      <WidgetHeader icon={notes_icon} title="Notes" label="Last edited note" />
+    <div className="notes-widget p-xl pb-l flex flex-col justify-between md:flex-1 h-full rounded-widget">
+      <WidgetHeader
+        icon={<NotebookIcon className="w-full h-full" />}
+        title="Notes"
+        label="Last edited note"
+      />
 
       <div className="notes-widget__body text-center p-m rounded-xl flex flex-1 items-center justify-center">
         {notes.lastText ? notes.lastText : "Buy notebookand charger"}
@@ -17,13 +19,13 @@ export default function NotesWidget({ notes }) {
         <div className="notes-widget__info flex flex-col items-start gap-xs">
           <div className="notes-widget__item notes-widget__item--total">
             <div className="notes-widget__item-icon">
-              <img src={folder_icon} alt="" />
+              <Folder />
             </div>
             <div className="notes-widget__item-text">{`${notes?.tasks?.length} notes total`}</div>
           </div>
           <div className="notes-widget__item notes-widget__item--updated">
             <div className="notes-widget__item-icon">
-              <img src={clocks_icon} alt="" />
+              <Clock />
             </div>
             <div className="notes-widget__item-text">{`Updated ${notes?.lastEditTime} ago`}</div>
           </div>

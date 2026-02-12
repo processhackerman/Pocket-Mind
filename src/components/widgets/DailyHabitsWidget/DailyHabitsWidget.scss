@@ -1,24 +1,57 @@
 .routine {
-  padding: $space-xl $space-xl $space-m;
+  padding: fluid-rem(0.6rem, 2.5rem);
+  background: linear-gradient($dark-2, $dark-4);
+  position: relative;
+
+  .widget-header {
+    margin-top: 0.25rem;
+  }
 
   &__tasks {
     .routine__check {
-      width: clamp(0.4rem, 2.3vw, 1rem);
-      height: clamp(0.4rem, 2.3vw, 1rem);
-      border: 1px #fff solid;
+      width: fluid-rem(0.5rem, 1.5rem, 360, 768);
+      height: fluid-rem(0.5rem, 1.5rem, 360, 768);
+      border: fluid-rem(0.0625rem, 0.2rem, 360, 768) #fff solid;
+
+      @media (min-width: 768px) {
+        width: fluid-rem(0.9rem, 0.5rem, 768, 1920);
+        height: fluid-rem(0.9rem, 0.5rem, 768, 1920);
+        border: fluid-rem(0.0625rem, 0.2rem, 768, 1920) #fff solid;
+      }
     }
   }
 
   &__text {
-    font-size: clamp(0.75rem, 0.689rem + 0.259vw, 1rem);
+    font-size: fluid-rem(0.7rem, 1.5rem, 360, 768);
+
+    @media (min-width: 600px) {
+      font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+      font-size: fluid(13, 20, 768, 1920);
+      font-weight: normal;
+    }
   }
 
   &__info {
-    font-size: clamp(0.5rem, 0.409rem + 0.388vw, 0.875rem);
+    font-size: fluid-rem(0.4rem, 1rem, 360, 768);
+    @media (min-width: 768px) {
+      font-size: fluid-rem(0.6rem, 1rem, 768, 1920);
+    }
   }
 
   &__progress .routine__square--checked {
     background: $accent-2;
     box-shadow: rgba($accent-2, 25%) 0 0 0.7rem;
+  }
+
+  &__square {
+    border-radius: fluid-rem(0.3rem, 1rem);
+    height: fluid-rem(1rem, 2rem, 360, 728);
+  }
+
+  .progress-bar {
+    height: fluid-rem(1rem, 2rem, 728, 1920);
   }
 }
