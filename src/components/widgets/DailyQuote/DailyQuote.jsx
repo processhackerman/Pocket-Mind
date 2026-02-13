@@ -11,7 +11,7 @@ export default function DailyQuote({ quote }) {
         icon={<Quote className="w-full h-full" />}
       />
 
-      <div className="quote-container flex items-center mt-3 px-3 py-4 rounded-2xl">
+      <div className="quote-container flex items-center mt-3 px-3 py-4 rounded-widget flex-1">
         <div className="flex-1 max-w-[10%] h-0.5 bg-white"></div>
         <div className="w-3 h-3 rounded-full">
           <Triangle className="w-full h-full rotate-90" />

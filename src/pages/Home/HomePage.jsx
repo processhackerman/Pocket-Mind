@@ -1,10 +1,5 @@
 import Header from "../../components/layout/Header";
-import UserWelcome from "../../components/ui/UserWelcome";
-import StatusOverview from "../../components/layout/StatusOverview/StatusOverview";
 import "./HomePage.scss";
-import Insight from "../../components/widgets/Insight/Insight";
-import ManagementSection from "../../components/layout/ManagementSection/ManagementSection";
-import DailyOverview from "../../components/layout/DailyOverview/DailyOverview";
 import DailyQuote from "../../components/widgets/DailyQuote/DailyQuote";
 import Stats from "../../components/layout/Stats/Stats";
 import WeatherWidget from "../../components/widgets/WeatherWidget/WeatherWidget";
@@ -12,9 +7,12 @@ import DailyHabitsWidget from "../../components/widgets/DailyHabitsWidget/DailyH
 import NextTaskWidget from "../../components/widgets/NextTaskWidget/NextTaskWidget";
 import InsightLarge from "../../components/widgets/InsightLarge/InsightLarge";
 import NotesWidget from "../../components/widgets/NotesWidget/NotesWidget";
-import TasksWidget from "../../components/widgets/TasksWidget/TasksWidget";
 import TasksLarge from "../../components/widgets/TasksLarge/TasksLarge";
 import Overview from "../../components/widgets/Overview/Overview";
+import HomeMobile from "./HomeMobile";
+import useBreakpoint from "../../hooks/useBreakpoint";
+import HomeTablet from "./HomeTablet";
+import HomePC from "./HomePC";
 
 export default function HomePage() {
   const weather = {
@@ -112,50 +110,72 @@ export default function HomePage() {
     { day: "4d", score: 85 },
   ];
 
+  const overviewData = {
+    resultPercentage: "80%",
+    sleepDots: [true, true, true, true, true, true, false, false],
+    waterSegments: [true, true, true, true, true, true, false, false],
+    stepsSegments: [true, true, true, true, true, true, true, false, false],
+    completedTasksPercentage: "70%",
+    sleepTime: "6h 42m",
+    waterProgress: "6 / 8",
+    stepsCounter: "8,237",
+  };
+
+  const streak = [
+    { day: "Sun", active: true },
+    { day: "Mon", active: true },
+    { day: "Tue", active: true },
+    { day: "Wed", active: false },
+    { day: "Thu", active: false },
+    { day: "Fri", active: false },
+    { day: "Sat", active: false },
+  ];
+
+  const { current } = useBreakpoint();
+
   return (
     <>
       <div className="home-page block">
-        <div className="md:hidden block">
-          <Header />
-          <main className="home-page__inner grid gap-2 mx-auto md:hidden">
-            <UserWelcome />
-            <section className="status-overview grid grid-cols-2 grid-rows-[7fr_3fr] gap-2 md:hidden">
-              <WeatherWidget weather={weather} />
-              <DailyHabitsWidget routine={routine} />
-              <NextTaskWidget nextTask={nextTask} />
-            </section>
-            <Insight insight={insight} />
-            <section className="management-section grid grid-cols-2 max-w-full items-stretch gap-2 relative z-0 md:hidden">
-              <NotesWidget notes={notes} />
-              <TasksWidget tasks={tasks} />
-            </section>
-            <DailyOverview chartData={chartData} />
-            <DailyQuote quote="One step at a time." />
-          </main>
-        </div>
-        <div className="hidden md:block lg:hidden">
-          <Header />
-          <main className="home-page__inner flex flex-col gap-3 mx-auto md:flex lg:hidden ml-16">
-            <section className="grid mt-3 status-overview grid-cols-[3fr_7fr] grid-rows-1 gap-3 items-stretch">
-              <WeatherWidget weather={weather} />
-              <InsightLarge insight={insight} />
-            </section>
-            <Stats />
-            <section className="grid grid-cols-2 gap-3">
-              <DailyHabitsWidget routine={routine} />
-              <TasksLarge tasks={tasks} />
-            </section>
-            <Overview chartData={chartData} />
-            <section className="grid grid-cols-2 grid-rows-2 gap-3">
-              <div className="row-span-2">
-                <NotesWidget notes={notes} />
-              </div>
-              <NextTaskWidget nextTask={nextTask} />
-              <DailyQuote quote="One step at a time" />
-            </section>
-          </main>
-        </div>
-        <div className="hidden lg:block"></div>
+        <Header />
+        <main className="home-page__inner mx-auto">
+          {current === "sm" && (
+            <HomeMobile
+              weather={weather}
+              routine={routine}
+              nextTask={nextTask}
+              insight={insight}
+              notes={notes}
+              tasks={tasks}
+              chartData={chartData}
+              overviewData={overviewData}
+            />
+          )}
+          {current === "md" && (
+            <HomeTablet
+              weather={weather}
+              routine={routine}
+              nextTask={nextTask}
+              insight={insight}
+              notes={notes}
+              tasks={tasks}
+              chartData={chartData}
+              overviewData={overviewData}
+            />
+          )}
+          {(current === "lg" || current === "xl") && (
+            <HomePC
+              weather={weather}
+              routine={routine}
+              nextTask={nextTask}
+              insight={insight}
+              notes={notes}
+              tasks={tasks}
+              chartData={chartData}
+              overviewData={overviewData}
+              streak={streak}
+            />
+          )}
+        </main>
       </div>
     </>
   );

@@ -40,7 +40,7 @@ const TaskCard = ({ title, priority, approxTime, isCompleted }) => (
   </div>
 );
 
-export default function TaskWidget({ tasks }) {
+export default function TasksLarge({ tasks }) {
   return (
     <div className="tasks-widget">
       <div className="tasks-widget__header">

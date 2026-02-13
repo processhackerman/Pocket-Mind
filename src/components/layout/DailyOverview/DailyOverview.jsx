@@ -3,15 +3,13 @@ import Streak from "../../ui/Overview/Streak";
 import Overview from "../../widgets/Overview/Overview";
 import "./DailyOverview.scss";
 
-export default function DailyOverview({ chartData }) {
+export default function DailyOverview({ chartData, overviewData }) {
   return (
     <section className="daily-overview grid grid-rows-2 grid-cols-[auto_1fr] md:grid-cols-1 md:grid-rows-1 items-stretch gap-2 relative z-0">
-      <div className="md:hidden contents">
-        <AddGlass />
-        <Streak />
-      </div>
+      <AddGlass />
+      <Streak />
 
-      <Overview chartData={chartData} />
+      <Overview chartData={chartData} overviewData={overviewData} />
     </section>
   );
 }

@@ -17,6 +17,13 @@ header {
     border-bottom: none;
     background: #090d0f;
   }
+
+  .button-upgrade-to-pro {
+    background: linear-gradient(90deg, #11181c, #1f2021);
+    box-shadow:
+      inset rgba(#000, 100%) 0 0 1rem,
+      rgba($accent-1, 10%) 0 0 1rem;
+  }
 }
 
 .welcome {
@@ -54,7 +61,10 @@ header {
   text-shadow: rgba(#fff, 25%) 0 0 0.5rem;
 
   @media (min-width: 768px) {
-    font-size: fluid-rem(1.25rem, 2rem, 768, 1920);
+    font-size: fluid-rem(1.25rem, 1.25rem, 768, 1024);
+  }
+  @media (min-width: 1024px) {
+    font-size: fluid-rem(1rem, 1.4rem, 1024, 1920);
   }
 }
 
@@ -62,7 +72,10 @@ header {
   font-size: fluid-rem(0.5rem, 1rem, 360, 768);
   opacity: 40%;
   @media (min-width: 768px) {
-    font-size: fluid-rem(0.8rem, 1rem, 768, 1920);
+    font-size: fluid-rem(0.8rem, 0.3rem, 768, 1024);
+  }
+  @media (min-width: 1024px) {
+    font-size: fluid-rem(0.65rem, 1rem, 1024, 1920);
   }
 }
 

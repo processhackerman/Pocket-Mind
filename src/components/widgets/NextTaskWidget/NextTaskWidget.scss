@@ -12,6 +12,10 @@
       font-size: fluid-rem(0.9rem, 0.8rem, 768, 1920);
     }
     line-height: 1;
+
+    @media (min-width: 1024px) {
+      font-size: fluid(13, 16, 1024, 1920);
+    }
   }
 
   &__divider {
@@ -27,6 +31,10 @@
     @media (min-width: 768px) {
       font-size: fluid-rem(1.3rem, 2rem, 768, 1920);
     }
+
+    @media (min-width: 1024px) {
+      font-size: fluid(15, 26, 1024, 1920);
+    }
     line-height: 1;
   }
 
@@ -35,6 +43,9 @@
     line-height: 1;
     @media (min-width: 768px) {
       font-size: fluid-rem(0.9rem, 0.8rem, 768, 1920);
+    }
+    @media (min-width: 1024px) {
+      font-size: fluid(13, 16, 1024, 1920);
     }
   }
 }

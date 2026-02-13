@@ -12,4 +12,8 @@
 
 .quote-text {
   text-shadow: rgba(#fff, 35%) 0 0 1rem;
+  font-size: fluid-rem(0.8rem, 1rem, 360, 768);
+  @media (min-width: 1024px) {
+    font-size: fluid-rem(0.7rem, 1.5rem, 1024, 1920);
+  }
 }

@@ -3,9 +3,17 @@
   background: url("../../../assets/images/weather-cold.jpg") center center
     no-repeat;
   background-size: cover;
-  padding: fluid-rem(0.6rem, 2.5rem);
+  padding: fluid-rem(0.6rem, 1rem, 360, 768);
+  @media (min-width: 768px) {
+    padding: fluid-rem(0.8rem, 2rem, 768, 1920)
+      fluid-rem(0.8rem, 1rem, 768, 1920);
+    padding-top: 1rem;
+  }
   border: $dark-2 2px solid;
   box-shadow: inset rgba(#000, 50%) 0 0 1.4rem;
+
+  @media (min-width: 1024px) {
+  }
 
   @media (min-width: 768px) {
     grid-area: auto;

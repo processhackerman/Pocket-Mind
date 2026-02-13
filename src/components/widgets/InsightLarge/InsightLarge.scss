@@ -1,7 +1,7 @@
 .insight-large {
   &__inner {
-    padding: fluid-rem(1.7rem, 1.5rem, 768, 1920)
-      fluid-rem(1.25rem, 1.5rem, 768, 1920);
+    padding: fluid-rem(1.7rem, 3rem, 768, 1024)
+      fluid-rem(1.25rem, 1.5rem, 768, 1024);
 
     background: linear-gradient($dark-2, $dark-4);
     .divider {
@@ -11,6 +11,11 @@
         rgba(#fff, 0)
       );
       width: 1.5px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: fluid-rem(1.7rem, 1.5rem, 1024, 1920)
+        fluid-rem(1.25rem, 1.5rem, 1024, 1920);
     }
 
     &::before {

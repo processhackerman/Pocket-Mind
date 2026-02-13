@@ -6,8 +6,8 @@ import { ClipboardList, Notebook, Thermometer } from "lucide-react";
 export default function InsightLarge({ insight }) {
   return (
     <div className="insight-large">
-      <div className="insight-large__inner flex justify-between p-5 rounded-widget items-stretch relative overflow-hidden">
-        <div className="insight-large__main max-w-[60%] flex flex-col gap-5 pl-1">
+      <div className="insight-large__inner flex h-full justify-between rounded-widget items-center relative overflow-hidden">
+        <div className="insight-large__main max-w-[60%] h-full flex justify-evenly flex-col gap-5 pl-1">
           <div className="insight-large__logo">
             <Logo text="AI Insight" />
           </div>
@@ -48,7 +48,7 @@ export default function InsightLarge({ insight }) {
             </div>
           </div>
         </div>
-        <div className="divider"></div>
+        <div className="divider h-full"></div>
         <div className="insight-large__additive flex flex-col justify-evenly">
           <div className="insight-large__image">
             <img

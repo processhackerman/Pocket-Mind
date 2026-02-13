@@ -1,0 +1,12 @@
+.streak-widget {
+  background: linear-gradient($dark-2, $dark-4);
+  border: $dark-3 1px solid;
+
+  &__label {
+    font-size: fluid-rem(0.65rem, 1rem, 1024, 1920);
+  }
+
+  &__fire {
+    width: fluid-rem(2rem, 3.5rem, 1024, 1920);
+  }
+}

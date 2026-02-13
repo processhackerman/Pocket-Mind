@@ -4,6 +4,10 @@
     font-size: clamp(0.7rem, 0.5731rem + 0.5641vw, 1.25rem);
   }
 
+  &-large__graph {
+    height: fluid-rem(12rem, 15rem, 768, 1920);
+  }
+
   .progress-bar {
     background: linear-gradient(90deg, #294250, $accent-2);
   }
@@ -21,11 +25,18 @@
 
   .review {
     border: rgba($accent-2, 50%) 2px solid;
-    font-size: clamp(0.75rem, 0.7356rem + 0.0641vw, 0.8125rem);
+    font-size: fluid-rem(0.7rem, 1rem, 360, 768);
+    font-weight: 600;
     background: $dark-3;
     box-shadow:
       rgba($accent-2, 10%) 0 0 0.5rem,
       inset rgba(0, 0, 0, 0.5) 0 0 1rem;
+
+    padding: fluid-rem(0.5rem, 1rem, 360, 768) 0;
+
+    @media (min-width: 1024px) {
+      font-size: fluid-rem(0.9rem, 1rem, 1024, 1920);
+    }
   }
 
   &__message-box {
