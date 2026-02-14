@@ -2,7 +2,7 @@ import fire_icon from "../../../assets/icons/streak.png";
 
 export default function Streak() {
   return (
-    <div className="streak-widget flex flex-col justify-between items-center p-m">
+    <div className="widget-shadow streak-widget flex flex-col justify-between items-center p-m">
       <div className="streak-widget__title text-[0.45rem] font-semibold">
         Habits streak
       </div>

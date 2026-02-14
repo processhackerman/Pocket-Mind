@@ -107,3 +107,11 @@ header {
 .rounded-widget {
   border-radius: fluid-rem(1rem, 1.875rem, 360, 768);
 }
+
+.widget-shadow {
+  box-shadow: $shadow-xs;
+
+  @media (min-width: 1024px) {
+    box-shadow: $shadow-s;
+  }
+}

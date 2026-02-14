@@ -20,22 +20,22 @@ export default function HomePC({
   streak,
 }) {
   return (
-    <div className="flex flex-col gap-3 ml-16 pt-10">
+    <div className="flex flex-col gap-6 pt-10">
       <Stats />
-      <div className="grid grid-cols-[1fr_2fr_1fr] gap-3">
+      <div className="grid grid-cols-[1fr_2fr_1fr] gap-6">
         <WeatherWidget weather={weather} />
         <InsightLarge insight={insight} />
-        <div className="flex flex-col gap-3">
+        <div className="grid grid-cols-1 grid-rows-[4fr_2fr] gap-6">
           <DailyHabitsWidget routine={routine} />
           <NextTaskWidget nextTask={nextTask} />
         </div>
       </div>
-      <div className="grid grid-cols-2 grid-rows-[1fr_auto] gap-3">
+      <div className="grid grid-cols-2 grid-rows-[1fr_auto] gap-6">
         <div className="row-span-2">
           <Overview overviewData={overviewData} chartData={chartData} />
         </div>
         <TasksLarge tasks={tasks} />
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-6">
           <DailyQuote quote="One step at a time" />
           <StreakWidget streak={streak} />
         </div>

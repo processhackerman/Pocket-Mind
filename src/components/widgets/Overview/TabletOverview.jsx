@@ -11,7 +11,7 @@ import {
 
 export default function TabletOverview({ chartData, overviewData }) {
   return (
-    <>
+    <div className="flex items-stretch gap-6 h-48 mt-4">
       <div className="overview__message-box text-center flex flex-1 items-center justify-center border-2 rounded-3xl p-2 max-w-[20%] h-[90%]">
         <p className="font-bold text-white text-sm leading-tight">
           It's an amazing result! Keep going.
@@ -78,6 +78,6 @@ export default function TabletOverview({ chartData, overviewData }) {
           </AreaChart>
         </ResponsiveContainer>
       </div>
-    </>
+    </div>
   );
 }

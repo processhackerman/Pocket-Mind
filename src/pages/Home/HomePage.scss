@@ -2,12 +2,20 @@
   background: linear-gradient(#0a0e10, #000507);
   width: 100%;
   min-height: 100vh;
+  .header-label {
+    border-bottom: $dark-2 1px solid;
+  }
 }
 
 .home-page__inner {
   padding: 0 1.5rem;
 
+  @media (min-width: 1024px) {
+    margin-left: fluid-rem(4rem, 5rem, 1024, 1640);
+    margin-right: 1.5rem;
+  }
+
   @media (min-width: 1640px) {
-    margin-left: 13rem;
+    margin-left: fluid-rem(18rem, 21rem, 1640, 1920);
   }
 }

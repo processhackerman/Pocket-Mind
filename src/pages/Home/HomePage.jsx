@@ -13,6 +13,7 @@ import HomeMobile from "./HomeMobile";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import HomeTablet from "./HomeTablet";
 import HomePC from "./HomePC";
+import MobileNavbar from "../../components/widgets/MobileNavbar/MobileNavbar";
 
 export default function HomePage() {
   const weather = {
@@ -137,6 +138,7 @@ export default function HomePage() {
     <>
       <div className="home-page block">
         <Header />
+
         <main className="home-page__inner mx-auto">
           {current === "sm" && (
             <HomeMobile
@@ -176,6 +178,8 @@ export default function HomePage() {
             />
           )}
         </main>
+
+        <MobileNavbar />
       </div>
     </>
   );

@@ -6,7 +6,7 @@ export default function WeatherWidget({ weather }) {
   const iconPath = `${import.meta.env.BASE_URL}icons/${normalizedName}.svg`;
 
   return (
-    <div className="weather-widget flex flex-col justify-between rounded-widget">
+    <div className="weather-widget flex flex-col justify-between rounded-widget relative widget-shadow">
       <div className="weather-widget__header grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] justify-between items-end mt-1">
         <div className="weather-widget__location-group flex justify-start items-center opacity-60 gap-[0.5vw]">
           <div className="weather-widget__location-icon h-auto">
@@ -30,7 +30,7 @@ export default function WeatherWidget({ weather }) {
         </div>
       </div>
 
-      <div className="weather-widget__temperature flex items-start font-semibold mt-1 leading-none">
+      <div className="weather-widget__temperature text-center justify-center flex items-start font-semibold mt-1 leading-none">
         <span>{weather.currentTemp}&deg;</span>
       </div>
 
@@ -55,7 +55,7 @@ export default function WeatherWidget({ weather }) {
         </div>
       </div>
 
-      <div className="weather-widget__quote font-semibold min-h-[13%] flex items-center justify-center px-0 rounded-widget w-full mt-3 backdrop-blur-sm">
+      <div className="weather-widget__quote font-semibold min-h-[13%] flex items-center justify-center backdrop-blur-sm">
         {weather.quote}
       </div>
     </div>

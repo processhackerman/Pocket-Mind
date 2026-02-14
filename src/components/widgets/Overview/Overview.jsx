@@ -4,27 +4,26 @@ import { TrendingUp } from "lucide-react";
 import MobileOverview from "./MobileOverview";
 import TabletOverview from "./TabletOverview";
 import PCOverview from "./PCOverview";
+import useBreakpoint from "../../../hooks/useBreakpoint";
 
 export default function Overview({ chartData, overviewData }) {
+  const { current } = useBreakpoint();
+
   return (
-    <div className="overview p-xl flex flex-col justify-between h-full rounded-widget">
+    <div className="overview p-xl flex flex-col justify-between h-full rounded-widget widget-shadow">
       <WidgetHeader
         icon={<TrendingUp className="w-full h-full" />}
         title="Daily overview"
         label="Sunday, December 14"
       />
 
-      <div className="md:hidden">
-        <MobileOverview overviewData={overviewData} />
-      </div>
-
-      <div className="hidden md:flex lg:hidden items-stretch gap-6 h-48 mt-4">
+      {current === "sm" && <MobileOverview overviewData={overviewData} />}
+      {current === "md" && (
         <TabletOverview chartData={chartData} overviewData={overviewData} />
-      </div>
-
-      <div className="hidden lg:block">
+      )}
+      {(current === "lg" || current === "xl") && (
         <PCOverview chartData={chartData} overviewData={overviewData} />
-      </div>
+      )}
     </div>
   );
 }

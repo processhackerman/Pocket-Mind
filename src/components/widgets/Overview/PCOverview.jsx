@@ -13,7 +13,7 @@ export default function PCOverview({ chartData, overviewData }) {
   return (
     <>
       <div className="overview-large__graph flex items-stretch gap-6 mt-4">
-        <div className="battery relative w-16 h-[90%] border-2 border-white rounded-2xl bg-black overflow-hidden flex-shrink-0">
+        <div className="battery relative w-[15%] h-[90%] border-2 border-white rounded-2xl bg-black overflow-hidden flex-shrink-0">
           <div
             className="battery-progress absolute bottom-0 w-full bg-gradient-to-t from-accent-primary to-cyan-400"
             style={{ height: overviewData.resultPercentage }}
@@ -22,7 +22,7 @@ export default function PCOverview({ chartData, overviewData }) {
             {overviewData.resultPercentage}
           </span>
         </div>
-        <div className="flex-[2] h-48 min-w-0">
+        <div className="flex-[2] min-h-48 min-w-0">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={chartData}

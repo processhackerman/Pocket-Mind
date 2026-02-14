@@ -20,8 +20,8 @@
   }
 
   &__icon {
-    width: fluid(15, 28, 768, 1920);
-    height: fluid(15, 28, 768, 1920);
+    width: fluid(15, 30, 768, 1920);
+    height: fluid(15, 30, 768, 1920);
     color: $accent-2; // Your Mint accent
     filter: drop-shadow(rgba($accent-2, 50%) 0 0 0.5rem);
   }

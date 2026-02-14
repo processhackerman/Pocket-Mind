@@ -13,7 +13,7 @@ export default function DailyHabitsWidget({ routine }) {
   const orderedProgressItems = [...completed_tasks, ...incompleted_tasks];
 
   return (
-    <div className="routine rounded-widget flex flex-col justify-between aspect-square md:aspect-auto">
+    <div className="routine rounded-widget flex flex-col justify-between aspect-square md:aspect-auto widget-shadow">
       <WidgetHeader
         icon={<Zap className="w-full h-full" />}
         title="Daily Habits"

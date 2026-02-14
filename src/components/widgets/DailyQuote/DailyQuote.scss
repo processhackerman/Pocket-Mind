@@ -1,6 +1,5 @@
 .quote {
   background: linear-gradient($dark-2, $dark-4);
-  border: $dark-3 1px solid;
 }
 
 .quote-container {
@@ -14,6 +13,6 @@
   text-shadow: rgba(#fff, 35%) 0 0 1rem;
   font-size: fluid-rem(0.8rem, 1rem, 360, 768);
   @media (min-width: 1024px) {
-    font-size: fluid-rem(0.7rem, 1.5rem, 1024, 1920);
+    font-size: fluid-rem(0.7rem, 1rem, 1024, 1920);
   }
 }

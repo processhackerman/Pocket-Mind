@@ -1,7 +1,9 @@
-import Logo from "../ui/Logo"; // Assuming this renders the "Pocket Mind" text
+import Logo from "../ui/Logo";
 import MenuButton from "../ui/MenuButton";
 import ai_icon from "../../assets/icons/ai-logo.png";
-import user_avatar from "../../assets/icons/user-avatar.svg"; // Make sure you have this!
+import user_avatar from "../../assets/icons/user-avatar.svg";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 import {
   Check,
   ClipboardList,
@@ -19,7 +21,18 @@ import useBreakpoint from "../../hooks/useBreakpoint";
 export default function Header() {
   const { current } = useBreakpoint();
 
-  // Menu items config to avoid repeating code
+  // 1. State to control the mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // 2. Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMobileMenuOpen]);
+
   const menuItems = [
     { icon: Home, label: "Home", active: true },
     { icon: ClipboardList, label: "Notes", active: false },
@@ -31,12 +44,75 @@ export default function Header() {
 
   return (
     <>
-      {/* --- MOBILE (sm) --- */}
+      {/* --- MOBILE HEADER (sm) --- */}
       {current === "sm" && (
-        <header className="header flex justify-between items-center px-5 min-h-[5vh] md:hidden">
-          <MenuButton />
-          <Logo text="Pocket Mind" />
-        </header>
+        <>
+          <header className="header flex justify-between items-center px-5 min-h-[5vh] border-b border-dark-2 bg-[#090d0f] relative z-20">
+            {/* Pass the toggle function to your MenuButton */}
+            <div onClick={() => setIsMobileMenuOpen(true)}>
+              <MenuButton />
+            </div>
+            <Logo text="Pocket Mind" />
+          </header>
+
+          {/* --- MOBILE FULLSCREEN MENU OVERLAY --- */}
+          {/* We use fixed inset-0 to cover the whole screen */}
+          <div
+            className={`fixed inset-0 bg-[#090d0f] z-50 transition-transform duration-300 ease-in-out ${
+              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <div className="flex flex-col h-full p-4">
+              {/* Header inside Menu (Logo + Close Button) */}
+              <div className="flex justify-between items-center mb-10">
+                <Logo text="Pocket Mind" />
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 text-gray-400 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="flex flex-col gap-1">
+                {menuItems.map((item, index) => (
+                  <button
+                    key={index}
+                    className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
+                      item.active
+                        ? "bg-dark-3 text-accent-primary"
+                        : "text-gray-400 hover:bg-dark-3/50 hover:text-white"
+                    }`}
+                  >
+                    <item.icon className="w-6 h-6" />
+                    <span className="text-xl font-medium">{item.label}</span>
+                  </button>
+                ))}
+              </nav>
+
+              {/* Bottom Actions (Settings/Profile) */}
+              <div className="mt-auto flex flex-col gap-6">
+                <button className="flex items-center gap-4 text-gray-400 p-2">
+                  <Settings className="w-6 h-6" />
+                  <span className="text-lg">Settings</span>
+                </button>
+
+                <div className="flex items-center gap-4 p-4 bg-dark-3 rounded-xl">
+                  <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                    <User className="text-gray-400" />
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold">Placeholder Name</p>
+                    <p className="text-accent-primary text-sm">
+                      Upgrade to Pro
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       )}
 
       {/* --- TABLET/LAPTOP (md & lg) - Icons Only --- */}
@@ -67,7 +143,7 @@ export default function Header() {
 
       {/* --- WIDE SCREEN (xl >= 1640px) - Full Sidebar --- */}
       {current === "xl" && (
-        <header className="header flex flex-col w-64 h-screen fixed left-0 top-0 border-r border-dark-2 bg-[#090d0f] p-6 justify-between">
+        <header className="header flex flex-col w-[16vw] h-screen fixed left-0 top-0 border-r border-dark-2 bg-[#090d0f] p-6 justify-between">
           {/* Top Section */}
           <div>
             <div className="flex items-center gap-2 mb-10">

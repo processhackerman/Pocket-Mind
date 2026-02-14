@@ -13,17 +13,11 @@
     }
   }
 
-  .notes-widget__item--updated .notes-widget__item-icon {
-    width: 0.5rem;
-    height: 0.5rem;
-    margin-left: 1px;
-  }
-
   &__item {
     display: flex;
     align-items: center;
     gap: $space-s;
-    font-size: fluid(7, 10);
+    font-size: fluid(7, 30);
 
     &-text {
       opacity: 70%;

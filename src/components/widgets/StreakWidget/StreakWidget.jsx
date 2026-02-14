@@ -6,7 +6,7 @@ import streak_gray_icon from "../../../assets/icons/streak_gray.svg";
 
 export default function StreakWidget({ streak }) {
   return (
-    <div className="streak-widget w-full p-xl pb-l flex flex-col gap-6 rounded-widget">
+    <div className="streak-widget w-full p-xl pb-l flex flex-col gap-6 rounded-widget widget-shadow">
       <WidgetHeader
         icon={<Target className="w-full h-full" />}
         title="Streak"

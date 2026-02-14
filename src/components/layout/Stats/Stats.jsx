@@ -1,13 +1,9 @@
 import StatWidget from "../../widgets/StatWidget/StatWidget";
-import moon_alt_icon from "../../../assets/icons/moon_alt.svg";
-import droplet_alt_icon from "../../../assets/icons/droplet_alt.svg";
-import footstep_alt_icon from "../../../assets/icons/footstep_alt.svg";
-import tasks_alt_icon from "../../../assets/icons/tasks_alt.svg";
 import { ClipboardList, Droplet, Footprints, Moon } from "lucide-react";
 
 export default function Stats({ data }) {
   return (
-    <div className="flex justify-between gap-2 md:gap-3">
+    <div className="flex justify-between gap-2 md:gap-3 lg:gap-6">
       <StatWidget
         title="Sleep"
         icon={<Moon className="w-full h-full" color="#00E6B0" />}

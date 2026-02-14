@@ -1,3 +1,4 @@
+import WidgetHeader from "../../ui/WidgetHeader";
 import "./TasksLarge.scss";
 
 import { ClipboardCheck, Check } from "lucide-react";
@@ -42,14 +43,12 @@ const TaskCard = ({ title, priority, approxTime, isCompleted }) => (
 
 export default function TasksLarge({ tasks }) {
   return (
-    <div className="tasks-widget">
-      <div className="tasks-widget__header">
-        <div>
-          <h2 className="tasks-widget__title">Tasks</h2>
-          <p className="tasks-widget__subtitle">Today's plan:</p>
-        </div>
-        <ClipboardCheck className="text-gray-400" size={24} />
-      </div>
+    <div className="tasks-widget widget-shadow rounded-widget">
+      <WidgetHeader
+        title="Tasks"
+        label="Today's plan"
+        icon={<ClipboardCheck className="w-full h-full" />}
+      />
 
       <div className="tasks-widget__scroll-area">
         {tasks.map((task, index) => (

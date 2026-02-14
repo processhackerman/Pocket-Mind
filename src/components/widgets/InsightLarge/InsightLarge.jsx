@@ -6,8 +6,8 @@ import { ClipboardList, Notebook, Thermometer } from "lucide-react";
 export default function InsightLarge({ insight }) {
   return (
     <div className="insight-large">
-      <div className="insight-large__inner flex h-full justify-between rounded-widget items-center relative overflow-hidden">
-        <div className="insight-large__main max-w-[60%] h-full flex justify-evenly flex-col gap-5 pl-1">
+      <div className="insight-large__inner flex h-full justify-between rounded-widget items-center relative overflow-hidden widget-shadow">
+        <div className="insight-large__main max-w-[60%] h-full items-start flex justify-evenly flex-col pl-1">
           <div className="insight-large__logo">
             <Logo text="AI Insight" />
           </div>
@@ -27,7 +27,7 @@ export default function InsightLarge({ insight }) {
               ))}
             </div>
           </div>
-          <div className="insight-large__indicators grid grid-cols-2 grid-rows-2 gap-2 mt-3">
+          <div className="insight-large__indicators grid grid-cols-[1fr_auto] grid-rows-2 gap-2 mt-3 flex-shrink">
             <div className="insight__footer-item insight__footer-item--temperature">
               <div className="insight__footer-icon">
                 <Thermometer className="w-full h-full" />
@@ -49,7 +49,7 @@ export default function InsightLarge({ insight }) {
           </div>
         </div>
         <div className="divider h-full"></div>
-        <div className="insight-large__additive flex flex-col justify-evenly">
+        <div className="insight-large__additive flex flex-col justify-evenly items-center">
           <div className="insight-large__image">
             <img
               src={brain_icon}

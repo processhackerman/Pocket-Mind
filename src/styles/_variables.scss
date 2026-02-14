@@ -24,6 +24,24 @@ $white: #fff;
 
 $rounded-widget: mixins.fluid-rem(1rem, 1.875rem);
 
+$shadow-xs:
+  inset 0px 1px 1px rgba(#fff, 10%),
+  0 0.5px 1px #00000013,
+  0 0.5px 2px #00000015;
+
+$shadow-s:
+  inset 0 1px 2px #ffffff50,
+  0 1px 2px #00000013,
+  0 2px 4px #00000015;
+$shadow-m:
+  inset 0 1px 2px #ffffff50,
+  0 2px 4px #00000013,
+  0 4px 8px #00000015;
+$shadow-l:
+  inset 0 1px 2px #ffffff50,
+  0 4px 6px #00000013,
+  0 6px 10px #00000015;
+
 $spacers: (
   "xxs": 0.0625rem,
   // 1px

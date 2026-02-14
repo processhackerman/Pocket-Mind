@@ -4,15 +4,15 @@ import { Clock, Folder, NotebookIcon } from "lucide-react";
 
 export default function NotesWidget({ notes }) {
   return (
-    <div className="notes-widget p-xl pb-l flex flex-col justify-between md:flex-1 h-full rounded-widget">
+    <div className="notes-widget p-xl pb-l flex flex-col justify-between md:flex-1 h-full rounded-widget widget-shadow">
       <WidgetHeader
         icon={<NotebookIcon className="w-full h-full" />}
         title="Notes"
         label="Last edited note"
       />
 
-      <div className="notes-widget__body text-center p-m rounded-xl flex flex-1 items-center justify-center">
-        {notes.lastText ? notes.lastText : "Buy notebookand charger"}
+      <div className="notes-widget__body text-center p-m rounded-xl flex flex-1 items-center justify-center font-bold">
+        {notes.lastText}
       </div>
 
       <div className="notes-widget__footer flex flex-col gap-l">
@@ -31,9 +31,7 @@ export default function NotesWidget({ notes }) {
           </div>
         </div>
 
-        <div className="notes-widget__tip text-[0.45rem] text-center opacity-40">
-          Swipe left to pin important notes
-        </div>
+        <div className="notes-widget__tip text-[0.45rem] text-center opacity-40"></div>
       </div>
     </div>
   );

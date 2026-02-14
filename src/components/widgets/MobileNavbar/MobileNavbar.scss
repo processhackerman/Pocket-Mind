@@ -1,0 +1,36 @@
+.center-button {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 10px;
+    aspect-ratio: 1 / 1;
+    background: $accent-1;
+    border-radius: 100%;
+    filter: blur(0.5rem);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 60px;
+    opacity: 10%;
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    background: $accent-1;
+    filter: blur(0.5rem);
+  }
+}
+
+.footer-button {
+  font-size: fluid-rem(0.375rem, 0.7rem, 360, 768);
+
+  &__icon {
+    width: fluid-rem(0.75rem, 2rem, 360, 768);
+  }
+}

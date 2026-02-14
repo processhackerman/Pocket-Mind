@@ -4,7 +4,7 @@ import { ClipboardList } from "lucide-react";
 
 export default function TasksWidget({ tasks }) {
   return (
-    <div className="tasks-widget p-xl pb-l flex flex-col justify-between">
+    <div className="tasks-widget p-xl pb-l flex flex-col justify-between rounded-widget widget-shadow">
       <WidgetHeader
         icon={<ClipboardList className="w-full h-full" />}
         label="Today’s plan:"

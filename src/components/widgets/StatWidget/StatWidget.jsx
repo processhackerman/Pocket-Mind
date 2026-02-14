@@ -10,7 +10,7 @@ export default function StatWidget({
   segments = 8,
 }) {
   return (
-    <div className="stat-card flex-1">
+    <div className="stat-card flex-1 widget-shadow">
       <div className="stat-card__header">
         <div className="stat-card__info">
           <div className="stat-card__icon">{icon}</div>

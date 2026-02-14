@@ -1,4 +1,7 @@
 .insight-large {
+  &__main {
+    gap: fluid-rem(1.25rem, 2.5rem, 768, 1920);
+  }
   &__inner {
     padding: fluid-rem(1.7rem, 3rem, 768, 1024)
       fluid-rem(1.25rem, 1.5rem, 768, 1024);
@@ -14,17 +17,18 @@
     }
 
     @media (min-width: 1024px) {
-      padding: fluid-rem(1.7rem, 1.5rem, 1024, 1920)
-        fluid-rem(1.25rem, 1.5rem, 1024, 1920);
+      padding: fluid-rem(1.7rem, 2.5rem, 1024, 1920)
+        fluid-rem(1.25rem, 1.7rem, 1024, 1920);
+      padding-bottom: fluid-rem(1.7rem, 4rem, 1024, 1920);
     }
 
     &::before {
       content: "";
       position: absolute;
       height: 75%;
-      width: 10px;
+      width: fluid-rem(0.625rem, 0.8rem, 768, 1920);
       border-radius: $rounded-widget;
-      left: -5px;
+      left: fluid-rem(-0.3125rem, -0.4rem, 768, 1920);
       top: 50%;
       transform: translateY(-50%);
       background: #00e6b0;
@@ -35,15 +39,11 @@
   &__buttons {
     font-size: fluid(11, 16);
     white-space: nowrap;
-
-    & > button {
-      border-radius: 0.75rem;
-    }
   }
 
   &__image {
-    width: fluid(89, 158);
-    height: fluid(89, 158);
+    width: fluid(89, 180);
+    height: fluid(89, 180);
     img {
       filter: drop-shadow(rgba(#fff, 0.3) 0 0 1rem);
     }
@@ -57,11 +57,17 @@
   }
 
   &__button {
-    padding: fluid-rem(0.6rem, 1rem, 768, 1920) fluid-rem(1rem, 1rem, 768, 1920);
+    padding: fluid-rem(0.6rem, 1rem, 768, 1920) fluid-rem(1rem, 2rem, 768, 1920);
+    border-radius: fluid-rem(0.75rem, 1rem, 768, 1920);
+    text-shadow: rgba(#000, 50%) 0 0 1rem;
+  }
+
+  &__additive {
+    gap: fluid-rem(1rem, 2rem, 768, 1920);
   }
 
   .insight__footer-item {
-    padding: $space-m 0;
+    padding: $space-m $space-l;
     background: linear-gradient(90deg, #1f9183, #13553e);
     border-radius: 1rem;
 

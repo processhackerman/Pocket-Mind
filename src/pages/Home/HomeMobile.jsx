@@ -20,7 +20,7 @@ export default function HomeMobile({
   insight,
 }) {
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 pb-[25vw]">
       <UserWelcome />
       <section className="status-overview grid grid-cols-2 grid-rows-[7fr_3fr] gap-2 md:hidden">
         <WeatherWidget weather={weather} />

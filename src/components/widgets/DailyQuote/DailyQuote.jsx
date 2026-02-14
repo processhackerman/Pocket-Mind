@@ -4,7 +4,7 @@ import { Quote, Triangle } from "lucide-react";
 
 export default function DailyQuote({ quote }) {
   return (
-    <div className="quote w-full p-xl pb-l flex flex-col rounded-widget">
+    <div className="quote w-full p-xl pb-l flex flex-col rounded-widget widget-shadow">
       <WidgetHeader
         title="Daily Quote"
         label="Progress over perfection"
@@ -16,7 +16,7 @@ export default function DailyQuote({ quote }) {
         <div className="w-3 h-3 rounded-full">
           <Triangle className="w-full h-full rotate-90" />
         </div>
-        <div className="quote-text text-sm mx-2 font-bold">{quote}</div>
+        <div className="quote-text mx-2 font-bold">{quote}</div>
         <div className="w-3 h-3 rounded-full">
           <Triangle className="w-full h-full -rotate-90" />
         </div>
